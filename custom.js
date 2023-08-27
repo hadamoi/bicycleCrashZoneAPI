@@ -49,3 +49,11 @@ function drawMap(locations) {
 }
 
 getData()
+
+const icon = document.querySelector(".icon");
+const title = document.querySelector(".title");
+
+icon.addEventListener("click", function(e){
+  title.classList.toggle('active');
+  this.classList.toggle('active');
+});

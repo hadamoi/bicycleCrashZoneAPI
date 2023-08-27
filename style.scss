@@ -1,1 +1,81 @@
 @import url(./reset.css);
+
+$mobile: "only screen and (max-width: 767px)";
+$blue: #636ded;
+$gray: #2c2c31;
+$yellow: #daee99;
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  main {
+    width: 400px;
+    height: 600px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+
+    @media #{$mobile} {
+      width: 100%;
+      height: 100vh;
+      box-shadow: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    .title {
+      position: absolute;
+      left: 20px;
+      bottom: 110px;
+      font-size: 1.4rem;
+      color: #fff;
+      background: $gray;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-transform: uppercase;  
+      transform-origin: left bottom;
+      scale: 0;
+      transition: .4s;
+
+      &.active {
+        scale: 1;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      z-index: 2;
+      background: $blue;
+      padding: 20px;
+      border-radius: 300px;
+      cursor: pointer;
+      transition: .4s;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+
+      &.active {
+        background: $yellow;
+
+        i {
+          color: $gray;
+        }
+      }
+
+      i {
+        color: #fff;
+        font-size: 4rem;
+      }
+    }
+  }
+}
