@@ -20,7 +20,7 @@ html {
   .container main {
     width: 100%;
     height: 100vh;
-    box-shadow: 0;
+    box-shadow: none;
   }
 }
 .container main #map {
